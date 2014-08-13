@@ -61,7 +61,7 @@ public class NuGetFeedDocument {
         }
         if (getEntries().getLength() > 1)
             throw new NuGetException(String.format("Multiple entries in feed for %s %s", getEntryTitle(), getPackageVersion()));
-        PackageRevision result = new PackageRevision(getPackageLabel(), getPublishedDate(), getAuthor(), getReleaseNotes(), getProjectUrl());
+        PackageRevision result = new PackageRevision(getPackageVersion(), getPublishedDate(), getAuthor(), getReleaseNotes(), getProjectUrl());
         result.addData(NuGetPackageConfig.PACKAGE_LOCATION, getPackageLocation());
         result.addData(NuGetPackageConfig.PACKAGE_VERSION, getPackageVersion());
         return result;
